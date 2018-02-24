@@ -33,9 +33,8 @@ export function createServer() {
   app.use(cookieParser());
 
   app.get('/api', (req, res) => res.send('api called'));
-  console.log('__dirname', __dirname)
-  console.log('path.join(', path.join(__dirname, 'public'))
-  app.use('/static', express.static('/home/clark/production/redux-server/public'), error404);
+
+  app.use('/static', express.static(path.join(__dirname, '../../../public')), error404);
 
   app.get('/*', universalReduxRenderer(Client, renderHtml, { ...reduxConfig }));
 

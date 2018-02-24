@@ -5,10 +5,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = (env) => {
 
   const nodeEnv = process.env.NODE_ENV || 'development';
-  const publicPath = process.env.PUBLIC_PATH || path.join(__dirname, 'public');
   const isProd = nodeEnv === 'production';
   const isClient = env.base === 'client';
-  console.log('publicPath', publicPath);
 
   return {
 
@@ -65,7 +63,6 @@ module.exports = (env) => {
       // use `if (ONSERVER) { ...` for server specific code
       ONSERVER: false,
       'process.env': { NODE_ENV: JSON.stringify(nodeEnv) },
-      'process.public_path': { PUBLIC_PATH: JSON.stringify(publicPath) },
     }),
       new HtmlWebpackPlugin({
         template: 'src/client/index.html',
