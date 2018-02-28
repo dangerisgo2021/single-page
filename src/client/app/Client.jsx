@@ -2,9 +2,13 @@ import React from 'react';
 
 import { Home, About, Menu, Reserve } from './rows';
 
-export const Client = () => [
-  <Home />,
-  <About />,
-  <Menu />,
-  <Reserve />,
-];
+import './Client.pcss';
+
+export const Client = () => (
+  <div className="client">
+    <Home />
+    <About />
+    <Menu />
+    <Reserve />
+  </div>
+);

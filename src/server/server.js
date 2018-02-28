@@ -1,10 +1,9 @@
 import lodash from 'lodash';
 import http from 'http';
-import socketServer from 'socket.io';
 
 import { createServer } from './config/server';
 
-console.log('starting redux server');
+console.log('starting server');
 
 //make lodash util globally available
 global._ = lodash;

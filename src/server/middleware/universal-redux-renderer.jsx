@@ -11,8 +11,10 @@ export const universalReduxRenderer = (Component, renderHtml, reduxConfig) => (r
 
   const store = createReduxStore(reduxConfig);
 
-  const Router = () =>  (
-    <StaticRouter	location={req.url} context={context} />
+  const Router = (props) => (
+    <StaticRouter	location={req.url} context={context} >
+      {props.children}
+    </StaticRouter>
   );
 
   const html = renderToString(

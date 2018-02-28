@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = (env) => {
 
@@ -35,7 +36,27 @@ module.exports = (env) => {
     target: isClient ? 'web' : 'node',
 
     module: {
-      loaders: [
+      rules: [
+        {
+          test: /\.pcss$/,
+          exclude: /node_modules/,
+          use: ExtractTextPlugin.extract({
+            fallback: 'style-loader',
+            use: [
+              'css-loader',
+              {
+                loader: 'postcss-loader',
+                options: {
+                  plugins: () => [
+                    require('postcss-import'),
+                    require('postcss-cssnext'),
+                    require('postcss-nested'),
+                  ],
+                },
+              },
+            ],
+          }),
+        },
         {
           test: /\.jsx?$/,
           exclude: /node_modules/,
@@ -47,7 +68,6 @@ module.exports = (env) => {
               'stage-0',
             ],
           },
-
         },
       ],
     },
@@ -57,6 +77,7 @@ module.exports = (env) => {
     },
 
     plugins: isClient ? [
+      new ExtractTextPlugin('/client.css'),
       new webpack.DefinePlugin({
       // http://stackoverflow.com/a/35372706/2177568
       // for server side code, just require, don't chunk
@@ -70,6 +91,7 @@ module.exports = (env) => {
         filename: 'index.html',
       }),
     ] : [
+      new ExtractTextPlugin('/client.css'),
       new webpack.DefinePlugin({
         // http://stackoverflow.com/a/35372706/2177568
         // for server side code, just require, don't chunk

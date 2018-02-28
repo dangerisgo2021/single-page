@@ -1,3 +1,8 @@
 import React from 'react';
 
-export const Reserve = () => 'reserve';
+export const Reserve = () => (
+  <div>
+    Reserve
+  </div>
+);
+
