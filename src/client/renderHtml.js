@@ -10,8 +10,7 @@ export const renderHtml = (html, initialState) => (
 			window.__INITIAL_STATE__ = ${JSON.stringify(initialState)}
 		</script>
     <script type="text/javascript" src="/static/client/client.js"></script>
-    <link rel="stylesheet" href="/static/client/client.css"></script>
-
+    <link rel="stylesheet" href="/static/client/styles.css"></script>
   </head>
   <body>
     <div id="app">${html}</div>

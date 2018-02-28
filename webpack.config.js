@@ -61,30 +61,20 @@ module.exports = (env) => {
           test: /\.jsx?$/,
           exclude: /node_modules/,
           loader: 'babel-loader',
-          options: {
-            presets: [
-              'env',
-              'react',
-              'stage-0',
-            ],
-          },
         },
       ],
     },
 
     devServer: {
       historyApiFallback: true,
+      contentBase: './public/client',
     },
 
     plugins: isClient ? [
-      new ExtractTextPlugin('/client.css'),
+      new ExtractTextPlugin('styles.css'),
       new webpack.DefinePlugin({
-      // http://stackoverflow.com/a/35372706/2177568
-      // for server side code, just require, don't chunk
-      // use `if (ONSERVER) { ...` for server specific code
-      ONSERVER: false,
-      'process.env': { NODE_ENV: JSON.stringify(nodeEnv) },
-    }),
+        'process.env': { NODE_ENV: JSON.stringify(nodeEnv) },
+      }),
       new HtmlWebpackPlugin({
         template: 'src/client/index.html',
         inject: 'body',

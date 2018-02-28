@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const Menu = () => (
-  <div>
+  <div class="menu">
     Menu
   </div>
 );
