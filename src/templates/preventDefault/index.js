@@ -1,0 +1,1 @@
+export {preventDefault} from './preventDefault';

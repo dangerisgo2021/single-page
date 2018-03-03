@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
-import { createReduxStore } from '../common/redux';
+import { createReduxStore } from '../templates/redux';
 import { Client } from './app';
 import { redux } from './config';
 import { Router, routerMiddleware } from './router';

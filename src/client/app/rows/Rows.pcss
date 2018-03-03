@@ -3,10 +3,33 @@
 }
 
 .home {
-    background-color: darkred;
-    position: relative;
-    height: 95%;
-    overflow: hidden;
+    border: 5px solid red;
+    height: 910px;
+
+    display: flex;
+    flex-flow: row nowrap;
+
+    .left-col {
+        border: 3px solid indianred;
+        flex: 0 0 40%;
+        display: flex;
+        flex-flow: column nowrap;
+
+        .top-row {
+            border: 1px solid orangered;
+            flex: 0 0 60%;
+        }
+
+        .bottom-row {
+            border: 1px solid palevioletred;
+            flex: 0 0 40%;
+        }
+    }
+
+    .right-col {
+        border: 3px solid darkred;
+        flex: 0 0 60%;
+    }
 }
 
 .menu {

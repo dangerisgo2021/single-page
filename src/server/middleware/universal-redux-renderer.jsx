@@ -3,7 +3,7 @@ import { renderToString } from 'react-dom/server';
 import { StaticRouter } from 'react-router';
 import { Provider } from 'react-redux';
 
-import { createReduxStore } from '../../common/redux';
+import { createReduxStore } from '../../templates/redux';
 
 export const universalReduxRenderer = (Component, renderHtml, reduxConfig) => (req, res) => {
 

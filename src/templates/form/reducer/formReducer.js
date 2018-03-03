@@ -4,5 +4,5 @@ import { inputValueSet } from '../actions';
 import { inputValueSetReducer } from './reducers';
 
 export const formReducer = new ReduxReducerBuilder()
-  .addReducer(inputValueSet.actionType, inputValueSetReducer)
+  .addReducer(inputValueSet.type, inputValueSetReducer)
   .build();

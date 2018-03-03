@@ -14,13 +14,13 @@ const registerActionType = (namespace = 'ACTION', type) => {
 
 };
 
-export const createAction = (namespace, type, payload)  => {
+export const createAction = (namespace, type, creator)  => {
 
   let registeredType = registerActionType(namespace, type);
 
-  const action = payload
-    ? (...args) => ({ type: registeredType, payload: payload(...args) })
-    : (...args) => ({ type: registeredType, payload: { ...args } });
+  const action = creator
+    ? (...args) => ({ type: registeredType, payload: creator(...args) })
+    : (...args) => ({ type: registeredType });
 
   action.type = registeredType;
   return action;
