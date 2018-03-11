@@ -1,0 +1,40 @@
+.home {
+  border: 5px solid red;
+  display: grid;
+  height: auto;
+
+  .left-col {
+    border: 3px solid indianred;
+    flex: 0 0 40%;
+    display: flex;
+    flex-flow: column nowrap;
+
+    .top-row {
+      border: 1px solid orangered;
+      flex: 0 0 60%;
+
+      .logo {
+        background-color: #111;
+        display: flex;
+        flex-flow: column nowrap;
+        height: 100%;
+        justify-content: center;
+      }
+    }
+
+    .bottom-row {
+      border: 1px solid palevioletred;
+      flex: 0 0 40%;
+    }
+
+  }
+
+  .right-col {
+    border: 3px solid darkred;
+    flex: 0 0 60%;
+  }
+
+  .slide {
+    transition: background-color 0.01s ease
+  }
+}

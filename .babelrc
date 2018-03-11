@@ -6,5 +6,6 @@
   ],
   "plugins": [
     "react-html-attrs",
+    "transform-export-extensions"
   ]
 }

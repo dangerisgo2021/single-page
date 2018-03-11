@@ -1,3 +1,5 @@
 export {Slideshow} from './Slideshow';
-export {SlideshowComponent} from './SlideshowComponent';
 export {slideshowReducer} from './slideshowReducer';
+export * as action from './actions';
+export * as selectors from './selectors';
+//export * as components from './components';

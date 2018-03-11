@@ -38,7 +38,7 @@ module.exports = (env) => {
     module: {
       rules: [
         {
-          test: /\.pcss$/,
+          test: /\.(s|p*)css$/,
           exclude: /node_modules/,
           use: ExtractTextPlugin.extract({
             fallback: 'style-loader',

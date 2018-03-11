@@ -1,14 +1,13 @@
 import React from 'react';
 
-import { Home, About, Menu, Reserve } from './rows';
+import { Home } from './Home';
+import { Navigation } from './Navigation';
 
-import './Client.pcss';
+import './Client.scss';
 
 export const Client = () => (
   <div className="client">
+    <Navigation />
     <Home />
-    <About />
-    <Menu />
-    <Reserve />
   </div>
 );

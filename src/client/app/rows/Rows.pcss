@@ -18,6 +18,12 @@
         .top-row {
             border: 1px solid orangered;
             flex: 0 0 60%;
+
+            .logo {
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: center;
+            }
         }
 
         .bottom-row {
@@ -29,6 +35,10 @@
     .right-col {
         border: 3px solid darkred;
         flex: 0 0 60%;
+    }
+
+    .slide {
+       transition: background-color 0.01s ease
     }
 }
 

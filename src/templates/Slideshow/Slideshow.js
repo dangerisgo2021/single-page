@@ -1,14 +1,15 @@
+import React from 'react';
 import { connectWithLifecycle } from 'react-lifecycle-component';
 
 import { nextSlide, initSlideshow, clearSlideshowInterval } from './actions';
 import { getSlideshowByName } from './selectors';
-import { SlideshowComponent } from './SlideshowComponent';
+import { SlideshowComponent } from './components/SlideshowComponent';
 
 const mapState = (state, { name }) => ({
   currentIndex: getSlideshowByName(state, name).currentIndex,
 });
 
-const mapDispatch = (dispatch, { name, autoplay, slides }) => ({
+const mapDispatch = (dispatch, { name, autoplay, children }) => ({
   componentDidMount() {
     let intervalID = null;
 
@@ -16,7 +17,7 @@ const mapDispatch = (dispatch, { name, autoplay, slides }) => ({
       intervalID = setInterval(() => {dispatch(nextSlide(name));}, autoplay);
     }
 
-    dispatch(initSlideshow(name, intervalID, autoplay, slides.length));
+    dispatch(initSlideshow(name, intervalID, autoplay, React.Children.count(children)));
   },
 
   componentWillUnmount() {

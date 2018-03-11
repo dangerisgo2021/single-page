@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import './Navigation.pcss';
+import './Navigation.scss';
 
 export const Navigation = () => (
   <div class="navigation">
