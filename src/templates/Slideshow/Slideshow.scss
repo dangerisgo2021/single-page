@@ -1,0 +1,38 @@
+.slideshow {
+
+  display: flex;
+  flex-flow: row nowrap;
+  overflow: hidden;
+  flex: 1 1 auto;
+
+  .slide {
+    visibility: hidden;
+    order: 0;
+    flex: 1 0 auto;
+    align-self: center;
+  }
+
+  .slide.current {
+    position: relative;
+    order: -2;
+    color: black;
+    transform: translateX(-100%);
+    z-index: 999;
+    left: 0%;
+    transition: transform 1s ease;
+  }
+
+  .slide.previous {
+    order: -3;
+    position: relative;
+    left: -100%;
+    transition: left 1s ease;
+  }
+
+  .slide.show {
+    visibility: visible;
+  }
+
+
+
+}

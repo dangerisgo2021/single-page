@@ -1,37 +1,69 @@
 .home {
-  border: 5px solid red;
-  display: grid;
-  height: auto;
+
+  display: flex;
+  flex-flow: column;
 
   .left-col {
-    border: 3px solid indianred;
-    flex: 0 0 40%;
+
     display: flex;
     flex-flow: column nowrap;
+    width: 100vw;
+    height: 85vh;
+    margin: 0;
+    padding: 0;
 
     .top-row {
-      border: 1px solid orangered;
-      flex: 0 0 60%;
 
       .logo {
         background-color: #111;
         display: flex;
         flex-flow: column nowrap;
-        height: 100%;
         justify-content: center;
+        padding: 3rem;
+        background: url("/static/images/bg-wood-texture.png") no-repeat center;
+        transition: background-color 1s ;
       }
+
+      .color-0 { background-color: #5a8088}
+      .color-1 { background-color: #773232}
+      .color-2 { background-color: #9c4928}
+      .color-3 { background-color: #1c2c39}
+      .color-4 { background-color: #324567}
     }
 
     .bottom-row {
-      border: 1px solid palevioletred;
-      flex: 0 0 40%;
+
+      .message-slider {
+
+        width: 100vw;
+
+
+        .message-slide {
+
+          padding: 1rem;
+          align-items: center;
+          display: flex;
+          flex-flow: column nowrap;
+          justify-content: center;
+          text-align: center;
+          text-transform: uppercase;
+        }
+
+        .background-image-0 { background-color: #5a8088}
+        .background-image-1 { background-color: #773232}
+        .background-image-2 { background-color: #9c4928}
+        .background-image-3 { background-color: #1c2c39}
+        .background-image-4 { background-color: #324567}
+
+      }
+
     }
 
   }
 
   .right-col {
     border: 3px solid darkred;
-    flex: 0 0 60%;
+    height: 100px;
   }
 
   .slide {

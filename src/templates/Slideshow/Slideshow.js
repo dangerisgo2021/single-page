@@ -5,9 +5,16 @@ import { nextSlide, initSlideshow, clearSlideshowInterval } from './actions';
 import { getSlideshowByName } from './selectors';
 import { SlideshowComponent } from './components/SlideshowComponent';
 
-const mapState = (state, { name }) => ({
-  currentIndex: getSlideshowByName(state, name).currentIndex,
-});
+const mapState = (state, { name }) => {
+
+  const { currentIndex, nextIndex } = getSlideshowByName(state, name);
+
+  return {
+    currentIndex,
+    nextIndex,
+  };
+
+};
 
 const mapDispatch = (dispatch, { name, autoplay, children }) => ({
   componentDidMount() {

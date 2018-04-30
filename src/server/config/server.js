@@ -34,7 +34,7 @@ export function createServer() {
 
   app.get('/api', (req, res) => res.send('api called'));
 
-  app.use('/static', express.static(path.join(__dirname, '../../../public')), error404);
+  app.use('/static', express.static(path.join(__dirname, '../../../static')), error404);
 
   app.get('/*', universalReduxRenderer(Client, renderHtml, { ...reduxConfig }));
 

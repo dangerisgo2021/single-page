@@ -1,21 +1,34 @@
 .navigation {
 
-    position: absolute;
-    width: 122px;
-    padding: 4.5rem 0 2rem;
-    top: 30%;
-    left: 41.666667%;
-    margin-top: -100px;
-    margin-left: 56px;
-    background-color: red;
-    background-size: 100%;
-    z-index: 999;
+  background: url("/static/images/bg-wood-texture.png") no-repeat center #231f1f;
+  position: sticky;
+  top: 0;
 
-    ul {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        text-align: center;
+  ul {
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+
+    li {
+
+      a {
+        color: white;
+        display: block;
+        font-family: "MontserratWeb",Arial,Helvetica,sans-serif;
+        font-weight: bold;
+        padding: 1rem 0;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        letter-spacing: 0.1rem;
+      }
+
     }
+
+  }
 
 }

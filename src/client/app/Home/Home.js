@@ -8,9 +8,14 @@ import { getHome } from './selectors';
 const autoplay = 0;
 const length = 5;
 
-const mapState = (state) => ({
-  currentIndex: getHome(state).currentIndex,
-});
+const mapState = (state) => {
+  const { currentIndex } = getHome(state);
+
+  return {
+    currentIndex,
+  };
+
+};
 
 const mapDispatch = (dispatch) => ({
 

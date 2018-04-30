@@ -1,11 +1,16 @@
 export const step = (state) => {
 
-  const { currentIndex, length } = state;
-  const nextIndex = currentIndex === length - 1 ? 0 : currentIndex + 1;
+  const { currentIndex, nextIndex, length } = state;
+
+  const current = nextIndex;
+  const previous = currentIndex;
+  const next = current === length - 1 ? 0 : current + 1;
 
   return {
     ...state,
-    currentIndex: nextIndex,
+    currentIndex: current,
+    previousIndex: previous,
+    nextIndex: next,
   };
 
 };

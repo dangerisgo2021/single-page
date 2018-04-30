@@ -18,7 +18,7 @@ module.exports = (env) => {
       : { server: path.join(__dirname, './src/server/server.js') },
 
     output: {
-      path: path.resolve(__dirname,  (isClient ? './public/client' : './build/server')),
+      path: path.resolve(__dirname,  (isClient ? './static/client' : './build/server')),
       filename: '[name].js',
       publicPath: '/',
     },
@@ -67,7 +67,7 @@ module.exports = (env) => {
 
     devServer: {
       historyApiFallback: true,
-      contentBase: './public/client',
+      contentBase: './',
     },
 
     plugins: isClient ? [

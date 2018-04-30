@@ -1,5 +1,7 @@
 export const init = (state, { payload }) => ({
   ...state,
-  currentIndex: 0,
   ...payload,
+  currentIndex: 0,
+  nextIndex: 1,
+  previousIndex: payload.length - 1,
 });
